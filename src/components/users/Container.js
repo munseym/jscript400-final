@@ -17,7 +17,7 @@ export default class Container extends React.Component {
   }
 
   async componentDidMount () {
-    const token = window.localStorage.getItem('journal-app')
+    const token = window.localStorage.getItem('assignment-app')
     if (token) {
       const users = await api.getAllUsers()
       this.setState({ users })

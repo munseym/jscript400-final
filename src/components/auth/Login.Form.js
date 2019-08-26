@@ -3,10 +3,10 @@ import Form from './Form'
 
 export default ({ onSubmit }) => (
   <main className='container'>
-    <section className='row justify-content-md-center'>
+    <section className='row justify-content-start'>
       <div className='col col-lg-5'>
         <h1>Login</h1>
-        <Form onSubmit={onSubmit} />
+        <Form isLogin='true' onSubmit={onSubmit} />
       </div>
     </section>
   </main>

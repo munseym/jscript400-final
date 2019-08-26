@@ -14,7 +14,8 @@ class App extends React.Component {
     super()
     this.state = {
       currentUserId: null,
-      loading: true
+      loading: true,
+      loginError: false
     }
 
     this.loginUser = this.loginUser.bind(this)
@@ -23,7 +24,7 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const token = window.localStorage.getItem('journal-app')
+    const token = window.localStorage.getItem('assignment-app')
     
     if (token) {
       const profile = await auth.profile()
@@ -40,8 +41,12 @@ class App extends React.Component {
   async loginUser (user) {
     await auth.login(user)
     const profile = await auth.profile()
-
-    this.setState({ currentUserId: profile.user._id })
+    if(!profile || !profile.user || !profile.user._id){
+      this.setState({loginError: true})
+    }else{
+      this.setState({loginError: false,
+        currentUserId: profile.user._id})
+    }
   }
 
   async signupUser (user) {
@@ -52,7 +57,7 @@ class App extends React.Component {
   }
 
   logoutUser () {
-    window.localStorage.removeItem('journal-app')
+    window.localStorage.removeItem('assignment-app')
     this.setState({ currentUserId: null })
   }
 
@@ -87,7 +92,13 @@ class App extends React.Component {
           }} />
 
           <Redirect to='/login' />
+        }
         </Switch>
+        {this.state.loginError &&
+          <div className='alert alert-danger'>
+            Invalid login credentials. Please check your email and password and try again!
+          </div>
+        }
       </Router>
     )
   }

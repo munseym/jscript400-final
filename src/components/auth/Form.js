@@ -38,10 +38,10 @@ class Form extends React.Component {
     }else if(this.state.password.length < 8){
       myErrors.push('Password must be at least 8 characters!')
     }
-    if(!this.state.firstName || this.state.firstName === ''){
+    if(!this.props.isLogin && (!this.state.firstName || this.state.firstName === '')){
       myErrors.push('First Name is Required!')
     }
-    if(!this.state.lastName || this.state.lastName === ''){
+    if(!this.props.isLogin && (!this.state.lastName || this.state.lastName === '')){
       myErrors.push('Last Name is Required!')
     }
     if (myErrors.length === 0) {
@@ -77,28 +77,30 @@ class Form extends React.Component {
               value={this.state.password} />
           </div>
         </div>
-        <div className='form-row'>
-          <div className='form-group col-md-6'>
-            <label htmlFor='firstName'>First Name</label>
-            <input
-              className='form-control'
-              id='firstName'
-              onChange={this.handleChange}
-              name='firstName'
-              type='text'
-              value={this.state.firstName} />
+        {!this.props.isLogin &&
+          <div className='form-row'>
+            <div className='form-group col-md-6'>
+              <label htmlFor='firstName'>First Name</label>
+              <input
+                className='form-control'
+                id='firstName'
+                onChange={this.handleChange}
+                name='firstName'
+                type='text'
+                value={this.state.firstName} />
+            </div>
+            <div className='form-group col-md-6'>
+              <label htmlFor='lastName'>Last Name</label>
+              <input
+                className='form-control'
+                id='lastName'
+                onChange={this.handleChange}
+                name='lastName'
+                type='text'
+                value={this.state.lastName} />
+            </div>
           </div>
-          <div className='form-group col-md-6'>
-            <label htmlFor='lastName'>Last Name</label>
-            <input
-              className='form-control'
-              id='lastName'
-              onChange={this.handleChange}
-              name='lastName'
-              type='text'
-              value={this.state.lastName} />
-          </div>
-        </div>
+        }
         <button type='submit' className='btn btn-primary'>Submit</button>
         {this.state.errors.length > 0 &&
           <div className='alert alert-danger'>

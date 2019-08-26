@@ -4,7 +4,7 @@ const BASE_URL = NODE_ENV === 'development'
   : 'tbd' // Once we deploy, we need to change this
 
 export const getAllUsers = async () => {
-  const token = window.localStorage.getItem('journal-app')
+  const token = window.localStorage.getItem('assignment-app')
   const response = await fetch(`${BASE_URL}/api/users`, {
     headers: {
       Authorization: `Bearer ${token}`,

@@ -12,7 +12,7 @@ export default ({ users }) => {
 
   return (
     <>
-      <h1>All Journals</h1>
+      <h1>All Assignments</h1>
       <ul>
         { lis }
       </ul>
