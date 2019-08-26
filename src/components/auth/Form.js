@@ -33,9 +33,9 @@ class Form extends React.Component {
                 <label htmlFor='emailAddress'>Email Address</label>
                 <input
                     className='form-control'
-                    id='username'
+                    id='emailAddress'
                     onChange={this.handleChange}
-                    name='username'
+                    name='emailAddress'
                     type='text'
                     value={this.state.emailAddress} />
             </div>
