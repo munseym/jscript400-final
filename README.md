@@ -16,7 +16,7 @@ This checklist is meant to be a useful guide for you in determining what you hav
 
 - [X] I have added my Frontend Repository link above
 - [X] I have added my Backend Repository link above
-- [ ] I have completed the requirements of the [Signup](#Signup) page
+- [X] I have completed the requirements of the [Signup](#Signup) page
 - [ ] I have completed the requirements of the [Login](#Login) page
 - [ ] I have completed the requirements of the [Home (Student View)](#Home-Student-View) page
 - [ ] I have completed the requirements of the [All Students (Student View)](#All-Students-Student-View) page
@@ -25,7 +25,7 @@ This checklist is meant to be a useful guide for you in determining what you hav
 - [ ] I have completed the requirements of the [All Students (Admin View)](#All-Students-Admin-View) page
 - [ ] I have completed the requirements of the [Ungraded Assignments](#Ungraded-Assignments) page
 - [ ] I have completed the requirements of the [Graded Assignments](#Graded-Assignments) page
-- [ ] I have completed the requirements of the [Logout](#Logout) page
+- [X] I have completed the requirements of the [Logout](#Logout) page
 - [ ] I have added my Deployed Frontend link above
 - [ ] I have removed any commented out code from both of my repositories
 - [ ] I have submitted my project on Canvas
