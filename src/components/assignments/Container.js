@@ -39,15 +39,12 @@ class Container extends React.Component {
     history.push(`/users/${currentUserId}/assignments`)
   }
 
-//   async refreshUsers() {
-//     const userList = await usersApi.getAllUsers()
-//     this.setState({ users: userList })
-//   }
-
   render () {
     const { users } = this.props
+    const user = users.find(user => user._id === this.props.currentUserId)
     return (
       <>
+        <List destroyAssignment={this.destroyAssignment} user={user} />
         <Route path='/users/:userId/assignments' exact component={({ match }) => {
           const user = users.find(user => user._id === match.params.userId)
           return <List destroyAssignment={this.destroyAssignment} user={user} />

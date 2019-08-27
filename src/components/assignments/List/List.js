@@ -2,23 +2,22 @@ import React from 'react'
 
 import Actions from './List.Actions'
 
-export default ({ destroyPost, user }) => {
-  const posts = user.posts.map(post => (
-    <div key={post._id} className='card'>
+export default ({ destroyAssignment, user }) => {
+  const assignments = user.assignments.map(assignment => (
+    <div key={assignment._id} className='card'>
       <div className='card-body'>
-        <p className='card-text'>{ post.content }</p>
+        <p className='card-text'>{ assignment.title }</p>
         <blockquote className='blockquote mb-0'>
-          <footer className='blockquote-footer'>Was feeling: { post.emotion }</footer>
+          <footer className='blockquote-footer'>Was feeling: { assignment.description }</footer>
         </blockquote>
       </div>
-      <Actions destroyPost={destroyPost} post={post} user={user} />
+      <Actions destroyAssignment={destroyAssignment} assignment={assignment} user={user} />
     </div>
   ))
 
   return (
     <>
-      <h1 className='mb-4'>{ user.username }'s Posts</h1>
-      { posts }
+      { assignments }
     </>
   )
 }

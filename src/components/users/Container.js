@@ -12,15 +12,22 @@ export default class Container extends React.Component {
     this.state = {
       users: [
         { assignments: [] }
-      ]
+      ],
+      loading: true
     }
   }
 
   async componentDidMount () {
+    console.log('In componentDidMount')
     const token = window.localStorage.getItem('assignment-app')
     if (token) {
       const users = await api.getAllUsers()
-      this.setState({ users })
+      this.setState({ 
+        users,
+        loading:false
+      })
+    }else{
+      console.log('Couldnt find token')
     }
   }
 
@@ -47,8 +54,11 @@ export default class Container extends React.Component {
   // }
 
   render () {
+    if (this.state.loading) return <p>Loading...</p>
+
     const { currentUserId } = this.props
     const { users } = this.state
+
     return (
       <main className='container'>
         <Route path='/users' exact component={() => <List users={users} />} />
