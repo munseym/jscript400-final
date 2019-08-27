@@ -17,10 +17,10 @@ This checklist is meant to be a useful guide for you in determining what you hav
 - [X] I have added my Frontend Repository link above
 - [X] I have added my Backend Repository link above
 - [X] I have completed the requirements of the [Signup](#Signup) page
-- [ ] I have completed the requirements of the [Login](#Login) page
+- [X] I have completed the requirements of the [Login](#Login) page
 - [ ] I have completed the requirements of the [Home (Student View)](#Home-Student-View) page
 - [ ] I have completed the requirements of the [All Students (Student View)](#All-Students-Student-View) page
-- [ ] I have completed the requirements of the [Create New Assignment](#Create-New-Assignment) page
+- [X] I have completed the requirements of the [Create New Assignment](#Create-New-Assignment) page
 - [ ] I have completed the requirements of the [Edit Assignment](#Edit-Assignment) page
 - [ ] I have completed the requirements of the [All Students (Admin View)](#All-Students-Admin-View) page
 - [ ] I have completed the requirements of the [Ungraded Assignments](#Ungraded-Assignments) page

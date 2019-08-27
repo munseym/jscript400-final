@@ -4,14 +4,14 @@ import { Route } from 'react-router-dom'
 import * as api from '../../api/users'
 
 import List from './List/List'
-//import PostsContainer from '../posts/Container'
+import AssignmentsContainer from '../assignments/Container'
 
 export default class Container extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       users: [
-        { posts: [] }
+        { assignments: [] }
       ]
     }
   }
@@ -22,6 +22,11 @@ export default class Container extends React.Component {
       const users = await api.getAllUsers()
       this.setState({ users })
     }
+  }
+
+  async refreshUsers() {
+    const userList = await api.getAllUsers()
+    this.setState({ users: userList })
   }
   
   // removePost
@@ -42,11 +47,12 @@ export default class Container extends React.Component {
   // }
 
   render () {
+    const { currentUserId } = this.props
     const { users } = this.state
     return (
       <main className='container'>
-        {/* <Route path='/users' exact component={() => <List users={users} />} />
-        <PostsContainer users={users} /> */}
+        <Route path='/users' exact component={() => <List users={users} />} />
+        <AssignmentsContainer currentUserId={currentUserId} users={users} refreshUsers={this.refreshUsers} />
       </main>
     )
   }

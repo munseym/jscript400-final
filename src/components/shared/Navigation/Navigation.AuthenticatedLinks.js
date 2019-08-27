@@ -8,13 +8,16 @@ const AuthenticatedLinks = ({ currentUserId, logoutUser, history }) => {
     history.push('/login')
   }
   return (
-    <ul className='nav justify-content-end'>
+    <ul className='nav justify-content-start'>
       <li className='nav-item'>
-        <Link className='nav-link' to='/users'>All Users</Link>
+        <Link className='nav-link' to='/home'>Home</Link>
       </li>
       <li className='nav-item'>
-        <Link className='nav-link' to={`/users/${currentUserId}/posts/new`}>
-          Create a New Post
+        <Link className='nav-link' to='/users'>All Students</Link>
+      </li>
+      <li className='nav-item'>
+        <Link className='nav-link' to={`/users/${currentUserId}/assignments/new`}>
+          Create a New Assignment
         </Link>
       </li>
       <li className='nav-item'>

@@ -53,7 +53,12 @@ class App extends React.Component {
     await auth.signup(user)
     const profile = await auth.profile()
 
-    this.setState({ currentUserId: profile.user._id })
+    if(!profile || !profile.user || !profile.user._id){
+      this.setState({loginError: true})
+    }else{
+      this.setState({loginError: false,
+        currentUserId: profile.user._id})
+    }
   }
 
   logoutUser () {
@@ -74,21 +79,25 @@ class App extends React.Component {
         <Switch>
           <Route path='/login' exact component={() => {
             return this.state.currentUserId ? (
-              <Redirect to='/users' />
+              <Redirect to='/home' />
             ) : (
               <Login onSubmit={this.loginUser} />
             )
           }} />
           <Route path='/signup' exact component={() => {
             return this.state.currentUserId ? (
-              <Redirect to='/users' />
+              <Redirect to='/home' />
             ) : (
               <Signup onSubmit={this.signupUser} />
             )
           }} />
 
           <Route path='/users' render={() => {
-            return this.state.currentUserId ? <UsersContainer /> : <Redirect to='/login' />
+            return this.state.currentUserId ? <UsersContainer currentUserId={this.state.currentUserId} /> : <Redirect to='/login' />
+          }} />
+
+          <Route path='/home' render={() => {
+            return this.state.currentUserId ? <UsersContainer currentUserId={this.state.currentUserId} /> : <Redirect to='/login' />
           }} />
 
           <Redirect to='/login' />
