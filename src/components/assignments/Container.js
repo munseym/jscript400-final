@@ -22,7 +22,7 @@ class Container extends React.Component {
 
     await assignmentsApi.createAssignment(currentUserId, assignment)
     await refreshUsers()
-    history.push(`/users/${currentUserId}/assignments`)
+    history.push(`/home`)
   }
 
   async destroyAssignment (assignment) {

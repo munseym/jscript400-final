@@ -15,6 +15,7 @@ export default class Container extends React.Component {
       ],
       loading: true
     }
+    this.refreshUsers = this.refreshUsers.bind(this)
   }
 
   async componentDidMount () {
