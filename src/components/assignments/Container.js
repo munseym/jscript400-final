@@ -27,17 +27,16 @@ class Container extends React.Component {
 
   async destroyAssignment (currentUserId, assignment) {
     const { history, refreshUsers } = this.props
-    console.log(`async currentUserId=${currentUserId} assignment=${assignment}`)
     await assignmentsApi.deleteAssignment(currentUserId, assignment)
     await refreshUsers()
-    history.push(`/users/${currentUserId}/assignments`)
+    history.push(`/home`)
   }
 
   async editAssignment (assignment) {
     const { currentUserId, history, refreshUsers } = this.props
     await assignmentsApi.updateAssignment(currentUserId, assignment)
     await refreshUsers()
-    history.push(`/users/${currentUserId}/assignments`)
+    history.push(`/home`)
   }
 
   render () {
@@ -46,10 +45,6 @@ class Container extends React.Component {
     return (
       <>
         <List destroyAssignment={this.destroyAssignment} user={user} />
-        <Route path='/users/:userId/assignments' exact component={({ match }) => {
-          const user = users.find(user => user._id === match.params.userId)
-          return <List destroyAssignment={this.destroyAssignment} user={user} />
-        }} />
         <Route path='/users/:userId/assignments/new' exact component={() => {
           return <NewForm onSubmit={this.createAssignment} />
         }} />
