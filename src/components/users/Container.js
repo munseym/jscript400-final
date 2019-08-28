@@ -35,23 +35,6 @@ export default class Container extends React.Component {
     const userList = await api.getAllUsers()
     this.setState({ users: userList })
   }
-  
-  // removePost
-  // -- would remove a single post from the state;
-  // calling set state
-    // removePost(postId){
-    //   const posts = this.state.users.posts.filter(function(post, index, arr){
-    //     return post.id != postId;
-    //   })
-    //   this.setState({"users.posts": posts})
-    // }
-
-  // async removePost(postId) {
-  //     const posts = this.state.users.posts.filter(function(post, index, arr){
-  //       return post.id !== postId;
-  //     })
-  //     this.setState({"users.posts": posts})
-  // }
 
   render () {
     if (this.state.loading) return <p>Loading...</p>
@@ -61,7 +44,7 @@ export default class Container extends React.Component {
 
     return (
       <main className='container'>
-        <Route path='/users' exact component={() => <List users={users} />} />
+        <Route path='/students' exact component={() => <List users={users} />} />
         <AssignmentsContainer currentUserId={currentUserId} users={users} refreshUsers={this.refreshUsers} />
       </main>
     )

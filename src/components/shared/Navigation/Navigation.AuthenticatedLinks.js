@@ -13,10 +13,10 @@ const AuthenticatedLinks = ({ currentUserId, logoutUser, history }) => {
         <Link className='nav-link' to='/home'>Home</Link>
       </li>
       <li className='nav-item'>
-        <Link className='nav-link' to='/users'>All Students</Link>
+        <Link className='nav-link' to='/students'>All Students</Link>
       </li>
       <li className='nav-item'>
-        <Link className='nav-link' to={`/users/${currentUserId}/assignments/new`}>
+        <Link className='nav-link' to={`/students/${currentUserId}/assignments/new`}>
           Create a New Assignment
         </Link>
       </li>

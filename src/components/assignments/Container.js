@@ -44,11 +44,13 @@ class Container extends React.Component {
     const user = users.find(user => user._id === this.props.currentUserId)
     return (
       <>
-        <List destroyAssignment={this.destroyAssignment} user={user} />
-        <Route path='/users/:userId/assignments/new' exact component={() => {
+        <Route path='/home' exact component={() => {
+          return <List destroyAssignment={this.destroyAssignment} user={user} />
+        }} />
+        <Route path='/students/:userId/assignments/new' exact component={() => {
           return <NewForm onSubmit={this.createAssignment} />
         }} />
-        <Route path='/users/:userId/assignment/:assignmentId/edit' exact component={({ match }) => {
+        <Route path='/students/:userId/assignment/:assignmentId/edit' exact component={({ match }) => {
           const user = users.find(user => user._id === match.params.userId)
           const assignment = user.assignments.find(user => user._id === match.params.assignmentId)
           return <EditForm onSubmit={this.editAssignment} assignment={assignment} />

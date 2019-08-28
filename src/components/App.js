@@ -92,7 +92,7 @@ class App extends React.Component {
             )
           }} />
 
-          <Route path='/users' render={() => {
+          <Route path='/students' render={() => {
             return this.state.currentUserId ? <UsersContainer currentUserId={this.state.currentUserId} /> : <Redirect to='/login' />
           }} />
 
