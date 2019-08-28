@@ -4,8 +4,8 @@ export default class Form extends React.Component {
   constructor (props) {
     super(props)
     const { assignment = {} } = this.props
-    const { title = '', link = '', description = '' } = assignment
-    this.state = { title, link, description }
+    const { _id='', title = '', link = '', description = '' } = assignment
+    this.state = { _id, title, link, description }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,7 +25,7 @@ export default class Form extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <div className='form-row'>
             <div>
-                <div className='form-group'>
+                <div className='form-group mx-4'>
                 <label htmlFor='title'>Assignment Title</label>
                 <input
                     className='form-control'
@@ -35,7 +35,7 @@ export default class Form extends React.Component {
                     type='text'
                     value={this.state.title} />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mx-4'>
                 <label htmlFor='link'>Project Link</label>
                 <textarea
                     className='form-control'
@@ -46,7 +46,7 @@ export default class Form extends React.Component {
                     value={this.state.link} />
                 </div>
             </div>
-            <div className='form-group'>
+            <div className='form-group mx-4'>
                 <label htmlFor='link'>Project Description</label>
                 <textarea
                     className='form-control'

@@ -4,7 +4,8 @@ import moment from 'moment'
 
 export default ({ destroyAssignment, assignment, user }) => (
   <div className='d-flex justify-content-start'>
-    <button className='btn btn-outline-dark text-black mb-4 mx-4' to={`/users/${user._id}/posts/${assignment._id}/edit`}>Edit</button>
+    <Link className='btn btn-outline-dark text-black mb-4 mx-4'
+      to={`/users/${user._id}/assignment/${assignment._id}/edit`}>Edit</Link>
 
     <button
       className='btn btn-dark btn-link text-white mb-4 mx-2'

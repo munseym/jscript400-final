@@ -25,7 +25,7 @@ const BASE_URL = NODE_ENV === 'development'
   }
   
   export const updateAssignment = (userId, assignment) => {
-    const path = `/api/users/${userId}/posts/${assignment._id}`
+    const path = `/api/users/${userId}/assignments/${assignment._id}`
     const options = { body: assignment, method: 'PUT' }
     return request(path, options)
   }
