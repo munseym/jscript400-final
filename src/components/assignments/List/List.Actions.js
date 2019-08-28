@@ -6,7 +6,7 @@ export default ({ destroyAssignment, assignment, user }) => {
   return(
   <div className='d-flex justify-content-start'>
     <Link className='btn btn-outline-dark text-black mb-4 mx-4'
-      to={`/users/${user._id}/assignment/${assignment._id}/edit`}>Edit</Link>
+      to={`/students/${user._id}/assignment/${assignment._id}/edit`}>Edit</Link>
 
     <button
       className='btn btn-dark btn-link text-white mb-4 mx-2'
