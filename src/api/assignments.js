@@ -5,17 +5,9 @@ const BASE_URL = NODE_ENV === 'development'
   : 'tbd' // Once we deploy, we need to change this
 
   export const deleteAssignment = async (userId, assignment) => {
-    const token = localStorage.getItem('assignment-app')
-    const response = await fetch(`${BASE_URL}/api/users/${userId}/assignments/${assignment._id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      method: 'DELETE'
-    })
-    const json = await response.json()
-  
-    return json
+    const path = `/api/users/${userId}/assignments/${assignment}`
+    const options = { method: 'DELETE' }
+    return request(path, options)
   }
   
   export const createAssignment = (userId, assignment) => {

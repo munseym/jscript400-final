@@ -25,8 +25,9 @@ class Container extends React.Component {
     history.push(`/home`)
   }
 
-  async destroyAssignment (assignment) {
-    const { currentUserId, history, refreshUsers } = this.props
+  async destroyAssignment (currentUserId, assignment) {
+    const { history, refreshUsers } = this.props
+    console.log(`async currentUserId=${currentUserId} assignment=${assignment}`)
     await assignmentsApi.deleteAssignment(currentUserId, assignment)
     await refreshUsers()
     history.push(`/users/${currentUserId}/assignments`)
