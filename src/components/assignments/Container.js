@@ -7,7 +7,6 @@ import EditForm from './Form/Edit.Form'
 import NewForm from './Form/New.Form'
 
 import * as assignmentsApi from '../../api/assignments.js'
-import * as usersApi from '../../api/users.js'
 
 class Container extends React.Component {
   constructor (props) {

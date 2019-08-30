@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import moment from 'moment'
 
 export default ({ destroyAssignment, assignment, user }) => {
   return(
@@ -16,6 +15,5 @@ export default ({ destroyAssignment, assignment, user }) => {
       >
       Delete
     </button>
-    {/* <span className='btn btn-link text-muted' disabled>Created {moment(post.created_at).fromNow()}</span> */}
   </div>
 )}

@@ -6,9 +6,9 @@ This is the final project for the JSCRIPT 400, Backend Web Development Course.
 
 Please fill in these links once you have completed the project. If you need help writing Markdown, you can refer to [this document](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-* [https://github.com/munseym/jscript400-final]()
-* [https://github.com/munseym/jscript400-final-backend]()
-* [Deployed Frontend]()
+* [Frontend Repository](https://github.com/munseym/jscript400-final)
+* [Backend Repository](https://github.com/munseym/jscript400-final-backend)
+* [Deployed Frontend](https://jscript400-final.munsey.now.sh)
 
 ## Project Checklist
 
@@ -26,9 +26,9 @@ This checklist is meant to be a useful guide for you in determining what you hav
 - [ ] I have completed the requirements of the [Ungraded Assignments](#Ungraded-Assignments) page
 - [ ] I have completed the requirements of the [Graded Assignments](#Graded-Assignments) page
 - [X] I have completed the requirements of the [Logout](#Logout) page
-- [ ] I have added my Deployed Frontend link above
-- [ ] I have removed any commented out code from both of my repositories
-- [ ] I have submitted my project on Canvas
+- [X] I have added my Deployed Frontend link above
+- [X] I have removed any commented out code from both of my repositories
+- [X] I have submitted my project on Canvas
 - [X] I have created 10 or more students on my deployed site
 - [X] I have created at least one assignment for each student on my deployed site
 - [X] I have created a student user with the email `student@email.com` and the password `password` and have tested logging in with it
